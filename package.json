@@ -1,0 +1,14 @@
+{
+  "name": "Project",
+  "version": "1",
+  "description": "AluraProject",
+  "main": "index.js",
+  "repository": "https://github.com/AllysomFernando/nextjs.git",
+  "author": "Allysom Renczenczen <82781674+AllysomFernando@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^13.4.19",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
