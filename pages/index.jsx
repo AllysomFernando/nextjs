@@ -1,7 +1,8 @@
 export default function HomePage() {
 	return (
 		<div>
-			<a href="/faq">Ir para faq</a>
+			
+			<a href="/faq">Ir para FAQ</a>
 		</div>
 	);
 }
