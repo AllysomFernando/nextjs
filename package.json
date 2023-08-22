@@ -1,5 +1,5 @@
 {
-  "name": "Project",
+  "name": "alura_project",
   "version": "1",
   "description": "AluraProject",
   "main": "index.js",
@@ -10,5 +10,10 @@
     "next": "^13.4.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   }
 }
