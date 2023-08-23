@@ -1,7 +1,7 @@
 import React from "react";
-import { theme } from "../theme/theme.jsx";
+import { theme } from "../Theme/theme.jsx";
 
-export function Input({ as, styleSheet, ...props }) {
+export default function Input({ as, styleSheet, ...props }) {
     const tag = "input";
     const finalStyleSheet = {
       transiton: "all 0.2s ease-in-out",

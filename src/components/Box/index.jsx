@@ -1,7 +1,7 @@
 import React from "react";
-import { theme } from "../theme/theme.jsx";
+import { theme } from "../Theme/theme.jsx";
 
-export function Box({
+export default function Box({
     as,
     styleSheet: { focus, hover, srOnly, ...styleSheet },
     ...props

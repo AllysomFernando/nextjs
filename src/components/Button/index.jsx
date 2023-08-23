@@ -1,8 +1,8 @@
 import React from "react";
-import { theme } from "../theme/theme.jsx";
+import { theme } from "../Theme/theme.jsx"
 
 
-export function Button({ as, styleSheet, ...props }) {
+export default function Button({ as, styleSheet, ...props }) {
     const { buttonVariant = "primary", ...restStyleSheet } = styleSheet;
     const tag = "button";
   

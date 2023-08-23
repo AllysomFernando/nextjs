@@ -1,4 +1,4 @@
-import GlobalStyle from "../src/components/theme/GlobalStyle";
+import GlobalStyle from "../src/components/global/GlobalStyles";
 
 function MyApp({ Component, pageProps }) {
   return (

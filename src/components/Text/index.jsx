@@ -1,7 +1,7 @@
 import React from "react";
 
 
-export function Text({ as, styleSheet, ...props }) {
+export default function Text({ as, styleSheet, ...props }) {
     const {
       textVariant = {
         fontSize: "inherit",
