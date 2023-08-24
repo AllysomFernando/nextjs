@@ -1,4 +1,4 @@
-import { theme } from '../Theme/theme.jsx';
+import { theme } from '../Theme';
 
 export default function GlobalStyle() {
     return (

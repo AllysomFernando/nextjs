@@ -1,6 +1,6 @@
 import React from "react";
-import { theme } from "../Theme/theme.jsx"
-
+import { theme } from "../Theme"
+import Text from "../Text";
 
 export default function Button({ as, styleSheet, ...props }) {
     const { buttonVariant = "primary", ...restStyleSheet } = styleSheet;

@@ -1,13 +1,12 @@
 import Footer from "../src/components/Footer";
 import Link from "../src/components/Link";
-import { theme } from "../src/components/Theme/theme";
-import { Image } from "../src/components/Image";
-import { Box } from "../src/components/Box";
-import { Text } from "../src/components/Text";
-import { Icon } from "../src/components/Icon";
-import { Input } from "../src/components/Input";
-import { Button } from "../src/components/Button";
-
+import { theme } from "../src/components/Theme";
+import Image from "../src/components/Image";
+import Box from "../src/components/Box";
+import Text from "../src/components/Text";
+import Icon from "../src/components/Icon";
+import Input from "../src/components/Input";
+import Button from "../src/components/Button";
 const LOGO_ALURA_URL = "https://fakeimg.pl/94x44";
 const SIDE_IMAGE_URL = "https://fakeimg.pl/2878x1640";
 
