@@ -8,9 +8,9 @@ import Icon from "../../components/Icon";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
 
-
 const LOGO_ALURA_URL = "/assets/images/logo.svg";
-const SIDE_IMAGE_URL = "https://img.freepik.com/vetores-gratis/maos-de-cura-energetica-com-fogos-de-artificio-abstratos_23-2148662444.jpg?w=1380&t=st=1692970317~exp=1692970917~hmac=35b35a186a25fbe82fcd7bd7801e45f9f9bf811a6271321c98ed4fc86af71bb3";
+const SIDE_IMAGE_URL =
+  "https://img.freepik.com/vetores-gratis/maos-de-cura-energetica-com-fogos-de-artificio-abstratos_23-2148662444.jpg?w=1380&t=st=1692970317~exp=1692970917~hmac=35b35a186a25fbe82fcd7bd7801e45f9f9bf811a6271321c98ed4fc86af71bb3";
 
 function SideImage() {
   return (
@@ -91,7 +91,7 @@ function SideImage() {
               },
             }}
             src={SIDE_IMAGE_URL}
-          alt="libras"
+            alt="libras"
           />
         </Box>
       </Box>
@@ -153,7 +153,7 @@ export default function HomeScreen() {
                 <Image
                   styleSheet={{
                     width: "300px",
-                    height: "300px"
+                    height: "300px",
                   }}
                   src={LOGO_ALURA_URL}
                   alt="Logo Find By"
@@ -276,8 +276,6 @@ export default function HomeScreen() {
                     },
                   }}
                 >
-       
-
                   <Box
                     styleSheet={{
                       marginTop: {
@@ -292,13 +290,38 @@ export default function HomeScreen() {
                     <Button
                       type="submit"
                       styleSheet={{
+                        backgroundColor: theme.colors.primary["800"],
                         paddingLeft: theme.space.x2,
                         paddingRight: theme.space.x2,
                         fontWeight: 300,
                         textVariant: theme.typography.variants.body1,
                       }}
                     >
-                      Cadastrar
+                      <Link
+                        href="/cadastrar"
+                        styleSheet={{
+                          display: "inline-flex",
+                          alignItems: {
+                            xs: "flex-start",
+                            sm: "center",
+                          },
+                          flexDirection: {
+                            xs: "column",
+                            sm: "row",
+                          },
+                        }}
+                      >
+                        <Text
+                          styleSheet={{
+                            textVariant: theme.typography.variants.body1,
+                            fontWeight: "900",
+                            borderRadius: theme.space.x64,
+                            color: theme.colors.neutral["000"],
+                          }}
+                        >
+                          Cadastrar
+                        </Text>
+                      </Link>
                     </Button>
                   </Box>
                 </Box>

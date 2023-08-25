@@ -22,6 +22,7 @@ export default function GlobalStyle() {
           display: block;
           vertical-align: middle;
         }
+      
         .sr-only {
           position: absolute;
           width: 1px;
