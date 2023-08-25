@@ -15,11 +15,10 @@ export default function Button({ as, styleSheet, ...props }) {
       outline: 0,
       width: theme.space["x1/1"],
       border: `${theme.space.xpx} solid ${theme.colors[buttonVariant][900]}`,
-      borderRadius: theme.space.x2,
-      paddingHorizontal: {
-        xs: theme.space.x5,
-        sm: theme.space.x10,
-      },
+      borderRadius: theme.space.x4,
+      paddingLeft: theme.space.x5,
+      paddingRight: theme.space.x10,
+
       paddingVertical: theme.space.x3,
       transiton: "all 0.2s ease-in-out",
       backgroundColor: theme.colors[buttonVariant][600],
@@ -30,6 +29,7 @@ export default function Button({ as, styleSheet, ...props }) {
       focus: {
         backgroundColor: theme.colors[buttonVariant][700],
         boxShadow: `0 5px 10px -5px ${theme.colors.neutral[999]}93`,
+
       },
       ...restStyleSheet,
     };

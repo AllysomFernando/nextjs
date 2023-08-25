@@ -23,15 +23,17 @@ export function rederCSS(props, currentBreakpoint) {
   if (!props) return "";
 
   return Object.keys(props)
-    .map((props) => {
-      const cssPropName = props
+    .map((key) => {
+      const cssPropName = key
         .split(/(?=[A-Z])/)
         .join("-")
         .toLowerCase();
-      const cssPropValue = props[props];
+      const cssPropValue = props[key];
       const isCssPropValueAnObject =
         Object.prototype.toString.call(cssPropValue) === "[object Object]";
-      const currentCssPropValue = cssPropName[currentBreakpoint];
+      const currentCssPropValue = isCssPropValueAnObject
+        ? cssPropValue[currentBreakpoint]
+        : undefined;
 
       if (currentBreakpoint == "xs" && !isCssPropValueAnObject) {
         return renderCSSValue(cssPropName, cssPropValue);

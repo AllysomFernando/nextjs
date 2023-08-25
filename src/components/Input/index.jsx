@@ -14,7 +14,8 @@ export default function Input({ as, styleSheet, ...props }) {
     width: theme.space["x1/1"],
     border: `1px solid ${theme.colors.neutral[300]}`,
     borderRadius: theme.space.x2,
-    paddingHorizontal: theme.space.x5,
+    paddingRight: theme.space.x5,
+    paddingLeft: theme.space.x5,
     paddingVertical: theme.space.x3,
     focus: {
       border: `1px solid ${theme.colors.primary[500]}`,

@@ -1,5 +1,4 @@
 import { theme } from "../Theme";
-
 import Box from "../Box";
 import Text from "../Text";
 
@@ -8,7 +7,7 @@ export default function Footer() {
     <Box
       as="footer"
       styleSheet={{
-        backbroundColor: theme.colors.neutral[900],
+        backgroundColor: theme.colors.neutral[900],
       }}
     >
       <Box
