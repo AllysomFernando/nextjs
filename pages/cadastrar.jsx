@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Input from "../src/components/Input";
 import { theme } from "../src/components/Theme";
 import Text from "../src/components/Text";
@@ -6,7 +6,33 @@ import Box from "../src/components/Box";
 import ReactInputMask from "react-input-mask";
 import Button from "../src/components/Button";
 import Link from "../src/components/Link";
+import Image from "../src/components/Image";
+import axios from "axios";
+
 export default function Cadastrar() {
+  const [cep, setCep] = useState("");
+  const [endereco, setEndereco] = useState({
+    estado: "",
+    cidade: "",
+  });
+
+  useEffect(() => {
+    if (cep.length === 9) {
+      axios
+        .get(`https://viacep.com.br/ws/${cep}/json/`)
+        .then((response) => {
+          const { uf, localidade } = response.data;
+          console.log(response.data);
+          setEndereco({
+            estado: uf,
+            cidade: localidade,
+          });
+        })
+        .catch((error) => {
+          console.error("Erro ao buscar CEP:", error);
+        });
+    }
+  }, [cep]);
   return (
     <div>
       <Box
@@ -15,9 +41,21 @@ export default function Cadastrar() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          height: "100vh",
+          height: "80vh",
         }}
       >
+        <Box>
+          <Image
+            styleSheet={{
+              width: "500px",
+              height: "500px",
+              paddingLeft: "10rem",
+              paddingTop: "300px",
+            }}
+            src="/assets/images/logo.svg"
+            alt="Logo Find By"
+          />
+        </Box>
         <Box
           styleSheet={{
             paddingLeft: theme.space.x40,
@@ -125,9 +163,14 @@ export default function Cadastrar() {
           >
             CEP:
           </Text>
-          <ReactInputMask mask="99999.999">
-            {() => (
+          <ReactInputMask
+            mask="99999-999"
+            value={cep}
+            onChange={(event) => setCep(event.target.value)}
+          >
+            {(inputProps) => (
               <Input
+                {...inputProps}
                 placeholder="Coloque seu CEP"
                 styleSheet={{
                   width: theme.space.x96,
@@ -153,6 +196,8 @@ export default function Cadastrar() {
           </Text>
 
           <Input
+            value={endereco.estado}
+            readOnly
             placeholder="Estado"
             styleSheet={{
               width: theme.space.x96,
@@ -176,6 +221,8 @@ export default function Cadastrar() {
           </Text>
 
           <Input
+            value={endereco.cidade}
+            readOnly
             placeholder="Cidade"
             styleSheet={{
               width: theme.space.x96,

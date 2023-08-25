@@ -2,7 +2,7 @@ import React from "react";
 import { theme } from "../Theme";
 import Text from "../Text";
 
-export default function Input({ as, styleSheet, placeholder, ...props }) {
+export default function Input({ as = "input", styleSheet, ...props }) {
   const tag = "input";
   const finalStyleSheet = {
     transiton: "all 0.2s ease-in-out",
@@ -24,7 +24,7 @@ export default function Input({ as, styleSheet, placeholder, ...props }) {
     ...styleSheet,
   };
 
-  return <Text as={tag} placeholder={placeholder} styleSheet={finalStyleSheet} {...props} />;
+  return <Text as={as} styleSheet={finalStyleSheet} {...props} />;
 }
 Input.defaultProps = {
   styleSheet: {},
