@@ -74,6 +74,7 @@ const space = {
     x72: '288px', // 18rem
     x80: '320px', // 20rem
     x96: '384px', // 24rem
+    x100: '500px'
 };
 
 export const theme = {
