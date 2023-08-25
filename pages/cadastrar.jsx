@@ -8,7 +8,7 @@ import Button from "../src/components/Button";
 import Link from "../src/components/Link";
 import Image from "../src/components/Image";
 import axios from "axios";
-
+import SelectTipo from "../src/components/Select";
 export default function Cadastrar() {
   const [cep, setCep] = useState("");
   const [endereco, setEndereco] = useState({
@@ -36,21 +36,22 @@ export default function Cadastrar() {
   return (
     <div>
       <Box
+       as="main"
         styleSheet={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          height: "80vh",
+          backgroundColor: theme.colors.neutral["050"],
         }}
       >
         <Box>
           <Image
             styleSheet={{
               width: "500px",
-              height: "500px",
+              height: "300px",
               paddingLeft: "10rem",
-              paddingTop: "300px",
+
             }}
             src="/assets/images/logo.svg"
             alt="Logo Find By"
@@ -232,8 +233,32 @@ export default function Cadastrar() {
         </Box>
         <Box
           styleSheet={{
+            paddingLeft: theme.space.x40,
+            paddingTop: theme.space.x10,
+          }}
+        >
+          <Text
+            styleSheet={{
+              color: theme.colors.primary["900"],
+              textVariant: theme.typography.variants.body1,
+            }}
+          >
+            Tipo:
+          </Text>
+          <SelectTipo
+            placeholder="Selecione uma opção"
+            options={["Cliente", "Tradutor"]}
+            onChange={(e) => console.log(e.target.value)}
+            styleSheet={{
+              width: theme.space.x96,
+            }}
+          />
+        </Box>
+        <Box
+          styleSheet={{
             marginTop: "30px",
             marginLeft: "150px",
+            paddingBottom: "15px",
           }}
         >
           <Button
@@ -243,7 +268,7 @@ export default function Cadastrar() {
             }}
           >
             <Link
-              href="/cadastrar"
+              href="/localizar"
               styleSheet={{
                 display: "inline-flex",
                 alignItems: {
@@ -263,6 +288,7 @@ export default function Cadastrar() {
                   borderRadius: theme.space.x64,
                   color: theme.colors.neutral["000"],
                   paddingLeft: "20px",
+                  
                 }}
               >
                 Cadastrar

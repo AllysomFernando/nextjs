@@ -5,7 +5,7 @@ import Box from "../../components/Box";
 import Text from "../../components/Text";
 import Image from "../../components/Image";
 import Icon from "../../components/Icon";
-import Input from "../../components/Input";
+
 import Button from "../../components/Button";
 
 const LOGO_ALURA_URL = "/assets/images/logo.svg";
@@ -323,6 +323,7 @@ export default function HomeScreen() {
                         </Text>
                       </Link>
                     </Button>
+
                   </Box>
                 </Box>
               </Box>

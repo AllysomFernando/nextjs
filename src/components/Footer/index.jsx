@@ -8,6 +8,7 @@ export default function Footer() {
       as="footer"
       styleSheet={{
         backgroundColor: theme.colors.neutral[900],
+        paddingTop: "10px"
       }}
     >
       <Box
@@ -16,11 +17,7 @@ export default function Footer() {
           maxWidth: theme.space.xcontainer_xl,
           marginLeft: "auto",
           marginRight: "auto",
-          paddingVertical: {
-            xs: theme.space.x12,
-            sm: theme.space.x6,
-            lg: theme.space.x8,
-          },
+          paddingTop: "30px"
         }}
       >
         <Text

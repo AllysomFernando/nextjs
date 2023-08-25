@@ -13,6 +13,7 @@ export default function GlobalStyle() {
         }
         body {
           font-family: ${theme.typography.fontFamily}, sans-serif;
+          background-color: #F7F7F7;
         }
         img, video {
           max-width: 100%;

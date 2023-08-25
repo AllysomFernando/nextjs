@@ -24,7 +24,7 @@ export default function Input({ as = "input", styleSheet, ...props }) {
     ...styleSheet,
   };
 
-  return <Text as={as} styleSheet={finalStyleSheet} {...props} />;
+   return <Text as={as} styleSheet={finalStyleSheet} {...props} />;
 }
 Input.defaultProps = {
   styleSheet: {},
