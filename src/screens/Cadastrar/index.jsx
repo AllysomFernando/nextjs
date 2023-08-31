@@ -10,12 +10,28 @@ import Image from "../../components/Image";
 import axios from "axios";
 import SelectTipo from "../../components/Select";
 import Footer from "../../components/Footer";
+import SuccessPopup from "../../components/PopUp";
+
 export default function Cadastrar() {
+  const [successPopupOpen, setSuccessPopupOpen] = useState(false);
   const [cep, setCep] = useState("");
   const [endereco, setEndereco] = useState({
     estado: "",
     cidade: "",
   });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      setSuccessPopupOpen(true);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const closeSuccessPopup = () => {
+    setSuccessPopupOpen(false);
+  };
 
   useEffect(() => {
     if (cep.length === 9) {
@@ -34,6 +50,7 @@ export default function Cadastrar() {
         });
     }
   }, [cep]);
+
   return (
     <div>
       <Box
@@ -43,7 +60,6 @@ export default function Cadastrar() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-      
         }}
       >
         <Box>
@@ -57,228 +73,215 @@ export default function Cadastrar() {
             alt="Logo Find By"
           />
         </Box>
-        <Box
-          styleSheet={{
-            paddingLeft: theme.space.x40,
-            paddingTop: theme.space.x10,
-          }}
-        >
-          <Text
+        <form onSubmit={handleSubmit}>
+          <Box
             styleSheet={{
-              color: theme.colors.primary["900"],
-              textVariant: theme.typography.variants.body1,
+              paddingLeft: theme.space.x40,
+              paddingTop: theme.space.x10,
             }}
           >
-            E-mail:
-          </Text>
-          <Input
-            styleSheet={{
-              width: theme.space.x96,
-              paddingLeft: theme.space.x2,
-            }}
-            placeholder="Coloque seu e-mail"
-          />
-        </Box>
-        <Box
-          styleSheet={{
-            paddingLeft: theme.space.x40,
-            paddingTop: theme.space.x10,
-          }}
-        >
-          <Text
-            styleSheet={{
-              color: theme.colors.primary["900"],
-              textVariant: theme.typography.variants.body1,
-            }}
-          >
-            Nome:
-          </Text>
-          <Input
-            styleSheet={{
-              width: theme.space.x96,
-              paddingLeft: theme.space.x2,
-            }}
-            placeholder="Coloque seu nome"
-          />
-        </Box>
-        <Box
-          styleSheet={{
-            paddingLeft: theme.space.x40,
-            paddingTop: theme.space.x10,
-          }}
-        >
-          <Text
-            styleSheet={{
-              color: theme.colors.primary["900"],
-              textVariant: theme.typography.variants.body1,
-            }}
-          >
-            Senha:
-          </Text>
-          <Input
-            type="password"
-            styleSheet={{
-              width: theme.space.x96,
-              paddingLeft: theme.space.x2,
-            }}
-            placeholder="Coloque sua senha"
-          />
-        </Box>
-        <Box
-          styleSheet={{
-            paddingLeft: theme.space.x40,
-            paddingTop: theme.space.x10,
-          }}
-        >
-          <Text
-            styleSheet={{
-              color: theme.colors.primary["900"],
-              textVariant: theme.typography.variants.body1,
-            }}
-          >
-            CPF:
-          </Text>
-          <ReactInputMask mask="999.999.999-99">
-            {() => (
-              <Input
-                placeholder="Coloque seu CPF"
-                styleSheet={{
-                  width: theme.space.x96,
-                  paddingLeft: theme.space.x2,
-                }}
-              />
-            )}
-          </ReactInputMask>
-        </Box>
-        <Box
-          styleSheet={{
-            paddingLeft: theme.space.x40,
-            paddingTop: theme.space.x10,
-          }}
-        >
-          <Text
-            styleSheet={{
-              color: theme.colors.primary["900"],
-              textVariant: theme.typography.variants.body1,
-            }}
-          >
-            CEP:
-          </Text>
-          <ReactInputMask
-            mask="99999-999"
-            value={cep}
-            onChange={(event) => setCep(event.target.value)}
-          >
-            {(inputProps) => (
-              <Input
-                {...inputProps}
-                placeholder="Coloque seu CEP"
-                styleSheet={{
-                  width: theme.space.x96,
-                  paddingLeft: theme.space.x2,
-                }}
-              />
-            )}
-          </ReactInputMask>
-        </Box>
-        <Box
-          styleSheet={{
-            paddingLeft: theme.space.x40,
-            paddingTop: theme.space.x10,
-          }}
-        >
-          <Text
-            styleSheet={{
-              color: theme.colors.primary["900"],
-              textVariant: theme.typography.variants.body1,
-            }}
-          >
-            Estado:
-          </Text>
-
-          <Input
-            value={endereco.estado}
-            readOnly
-            placeholder="Estado"
-            styleSheet={{
-              width: theme.space.x96,
-              paddingLeft: theme.space.x2,
-            }}
-          />
-        </Box>
-        <Box
-          styleSheet={{
-            paddingLeft: theme.space.x40,
-            paddingTop: theme.space.x10,
-          }}
-        >
-          <Text
-            styleSheet={{
-              color: theme.colors.primary["900"],
-              textVariant: theme.typography.variants.body1,
-            }}
-          >
-            Cidade:
-          </Text>
-
-          <Input
-            value={endereco.cidade}
-            readOnly
-            placeholder="Cidade"
-            styleSheet={{
-              width: theme.space.x96,
-              paddingLeft: theme.space.x2,
-            }}
-          />
-        </Box>
-        <Box
-          styleSheet={{
-            paddingLeft: theme.space.x40,
-            paddingTop: theme.space.x10,
-          }}
-        >
-          <Text
-            styleSheet={{
-              color: theme.colors.primary["900"],
-              textVariant: theme.typography.variants.body1,
-            }}
-          >
-            Tipo:
-          </Text>
-          <SelectTipo
-            placeholder="Selecione uma opção"
-            options={["Cliente", "Tradutor"]}
-            onChange={(e) => console.log(e.target.value)}
-            styleSheet={{
-              width: theme.space.x96,
-            }}
-          />
-        </Box>
-        <Box
-          styleSheet={{
-            marginTop: "30px",
-            marginLeft: "150px",
-            paddingBottom: "15px",
-          }}
-        >
-          <Button
-            type="submit"
-            styleSheet={{
-              width: "200px",
-            }}
-          >
-            <Link
-              href="/localizar"
+            <Text
               styleSheet={{
-                display: "inline-flex",
-                alignItems: {
-                  xs: "flex-start",
-                  sm: "center",
-                },
-                flexDirection: {
-                  xs: "column",
-                  sm: "row",
-                },
+                color: theme.colors.primary["900"],
+                textVariant: theme.typography.variants.body1,
+              }}
+            >
+              E-mail:
+            </Text>
+            <Input
+              styleSheet={{
+                width: theme.space.x96,
+                paddingLeft: theme.space.x2,
+              }}
+              placeholder="Coloque seu e-mail"
+            />
+          </Box>
+          <Box
+            styleSheet={{
+              paddingLeft: theme.space.x40,
+              paddingTop: theme.space.x10,
+            }}
+          >
+            <Text
+              styleSheet={{
+                color: theme.colors.primary["900"],
+                textVariant: theme.typography.variants.body1,
+              }}
+            >
+              Nome:
+            </Text>
+            <Input
+              styleSheet={{
+                width: theme.space.x96,
+                paddingLeft: theme.space.x2,
+              }}
+              placeholder="Coloque seu nome"
+            />
+          </Box>
+          <Box
+            styleSheet={{
+              paddingLeft: theme.space.x40,
+              paddingTop: theme.space.x10,
+            }}
+          >
+            <Text
+              styleSheet={{
+                color: theme.colors.primary["900"],
+                textVariant: theme.typography.variants.body1,
+              }}
+            >
+              Senha:
+            </Text>
+            <Input
+              type="password"
+              styleSheet={{
+                width: theme.space.x96,
+                paddingLeft: theme.space.x2,
+              }}
+              placeholder="Coloque sua senha"
+            />
+          </Box>
+          <Box
+            styleSheet={{
+              paddingLeft: theme.space.x40,
+              paddingTop: theme.space.x10,
+            }}
+          >
+            <Text
+              styleSheet={{
+                color: theme.colors.primary["900"],
+                textVariant: theme.typography.variants.body1,
+              }}
+            >
+              CPF:
+            </Text>
+            <ReactInputMask mask="999.999.999-99">
+              {() => (
+                <Input
+                  placeholder="Coloque seu CPF"
+                  styleSheet={{
+                    width: theme.space.x96,
+                    paddingLeft: theme.space.x2,
+                  }}
+                />
+              )}
+            </ReactInputMask>
+          </Box>
+          <Box
+            styleSheet={{
+              paddingLeft: theme.space.x40,
+              paddingTop: theme.space.x10,
+            }}
+          >
+            <Text
+              styleSheet={{
+                color: theme.colors.primary["900"],
+                textVariant: theme.typography.variants.body1,
+              }}
+            >
+              CEP:
+            </Text>
+            <ReactInputMask
+              mask="99999-999"
+              value={cep}
+              onChange={(event) => setCep(event.target.value)}
+            >
+              {(inputProps) => (
+                <Input
+                  {...inputProps}
+                  placeholder="Coloque seu CEP"
+                  styleSheet={{
+                    width: theme.space.x96,
+                    paddingLeft: theme.space.x2,
+                  }}
+                />
+              )}
+            </ReactInputMask>
+          </Box>
+          <Box
+            styleSheet={{
+              paddingLeft: theme.space.x40,
+              paddingTop: theme.space.x10,
+            }}
+          >
+            <Text
+              styleSheet={{
+                color: theme.colors.primary["900"],
+                textVariant: theme.typography.variants.body1,
+              }}
+            >
+              Estado:
+            </Text>
+
+            <Input
+              value={endereco.estado}
+              readOnly
+              placeholder="Estado"
+              styleSheet={{
+                width: theme.space.x96,
+                paddingLeft: theme.space.x2,
+              }}
+            />
+          </Box>
+          <Box
+            styleSheet={{
+              paddingLeft: theme.space.x40,
+              paddingTop: theme.space.x10,
+            }}
+          >
+            <Text
+              styleSheet={{
+                color: theme.colors.primary["900"],
+                textVariant: theme.typography.variants.body1,
+              }}
+            >
+              Cidade:
+            </Text>
+
+            <Input
+              value={endereco.cidade}
+              readOnly
+              placeholder="Cidade"
+              styleSheet={{
+                width: theme.space.x96,
+                paddingLeft: theme.space.x2,
+              }}
+            />
+          </Box>
+          <Box
+            styleSheet={{
+              paddingLeft: theme.space.x40,
+              paddingTop: theme.space.x10,
+            }}
+          >
+            <Text
+              styleSheet={{
+                color: theme.colors.primary["900"],
+                textVariant: theme.typography.variants.body1,
+              }}
+            >
+              Tipo:
+            </Text>
+            <SelectTipo
+              placeholder="Selecione uma opção"
+              options={["Cliente", "Tradutor"]}
+              onChange={(e) => console.log(e.target.value)}
+              styleSheet={{
+                width: theme.space.x96,
+              }}
+            />
+          </Box>
+          <Box
+            styleSheet={{
+              marginTop: "30px",
+              marginLeft: "150px",
+              paddingBottom: "15px",
+            }}
+          >
+            <Button
+              type="submit"
+              styleSheet={{
+                width: "200px",
               }}
             >
               <Text
@@ -292,9 +295,10 @@ export default function Cadastrar() {
               >
                 Cadastrar
               </Text>
-            </Link>
-          </Button>
-        </Box>
+            </Button>
+          </Box>
+        </form>
+        <SuccessPopup isOpen={successPopupOpen} onClose={closeSuccessPopup} />
       </Box>
       <Footer />
     </div>

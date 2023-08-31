@@ -55,6 +55,38 @@ export default function GlobalStyle() {
           justify-content: flex-start;
           align-items: stretch;
         }
+        .modalOverlay {
+          margin: 20% 40%;
+          background-color: #322F4B;
+          border-radius: 45px;
+          max-width: 500px;
+          height: fit-content;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          flex-direction: column;
+          padding: 50px;
+          width: 100%;
+          min-height: 20vh;
+      }
+      
+      .modalContent {
+          border-radius: 50px;
+          max-width: 800px;
+          height: fit-content;
+          width: 95%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          flex-direction: column;
+          padding: 30px;
+          font-family: 'Raleway', sans-serif;
+          letter-spacing: 1px;
+          font-size: 15px;
+          color: white;
+      }
       `}</style>
     )
 }
