@@ -103,9 +103,6 @@ function SideImage() {
 export default function HomeScreen() {
   return (
     <Box>
-      <Head>
-        <title>Find By</title>
-      </Head>
       <Box
         as="main"
         styleSheet={{
