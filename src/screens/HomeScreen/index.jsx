@@ -1,3 +1,4 @@
+
 import Footer from "../../components/Footer";
 import Link from "../../components/Link";
 import { theme } from "../../components/Theme";
@@ -102,6 +103,9 @@ function SideImage() {
 export default function HomeScreen() {
   return (
     <Box>
+      <Head>
+        <title>Find By</title>
+      </Head>
       <Box
         as="main"
         styleSheet={{
