@@ -8,6 +8,7 @@ import Image from "../../components/Image";
 import Icon from "../../components/Icon";
 
 import Button from "../../components/Button";
+import Heads from "../../components/Head";
 
 const LOGO_ALURA_URL = "/assets/images/logo.svg";
 const SIDE_IMAGE_URL =
@@ -103,6 +104,9 @@ function SideImage() {
 export default function HomeScreen() {
   return (
     <Box>
+      <Heads>
+        FindBy | Início
+      </Heads>
       <Box
         as="main"
         styleSheet={{

@@ -11,6 +11,7 @@ import axios from "axios";
 import SelectTipo from "../../components/Select";
 import Footer from "../../components/Footer";
 import SuccessPopup from "../../components/PopUp";
+import Heads from "../../components/Head";
 
 export default function Cadastrar() {
   const [successPopupOpen, setSuccessPopupOpen] = useState(false);
@@ -62,6 +63,9 @@ export default function Cadastrar() {
           justifyContent: "center",
         }}
       >
+        <Heads>
+          FindBy | Cadastro
+        </Heads>
         <Box>
           <Image
             styleSheet={{

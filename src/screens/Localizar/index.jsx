@@ -5,6 +5,7 @@ import Text from "../../components/Text";
 import Image from "../../components/Image";
 import Button from "../../components/Button";
 import { theme } from "../../components/Theme";
+import Heads from "../../components/Head";
 export default function Localizar() {
   return (
     <div>
@@ -18,7 +19,9 @@ export default function Localizar() {
           marginLeft: "-500px",
         }}
       >
-
+        <Heads>
+          FindBy | Localizar
+        </Heads>
         <Image
           styleSheet={{
             width: "800px",
