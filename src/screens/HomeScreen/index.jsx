@@ -1,4 +1,3 @@
-
 import Footer from "../../components/Footer";
 import Link from "../../components/Link";
 import { theme } from "../../components/Theme";
@@ -85,12 +84,8 @@ function SideImage() {
               maxWidth: {
                 lg: "none",
               },
-              width: {
-                lg: "auto",
-              },
-              height: {
-                lg: theme.space["x1/1"],
-              },
+              width: "500px",
+              height: "500px",
             }}
             src={SIDE_IMAGE_URL}
             alt="libras"
@@ -104,9 +99,7 @@ function SideImage() {
 export default function HomeScreen() {
   return (
     <Box>
-      <Heads>
-        FindBy | Início
-      </Heads>
+      <Heads>FindBy | Início</Heads>
       <Box
         as="main"
         styleSheet={{
@@ -206,26 +199,7 @@ export default function HomeScreen() {
                         },
                       }}
                     >
-                      O que tem de novo?
-                    </Text>
-                    <Text
-                      styleSheet={{
-                        textVariant: theme.typography.variants.body4,
-                        fontWeight: "600",
-                        display: "inline-flex",
-                        borderRadius: theme.space.x64,
-                        color: theme.colors.primary["400"],
-                        alignItems: "center",
-                      }}
-                    >
-                      <Text>Confira as principais dúvidas</Text>
-                      <Icon
-                        styleSheet={{
-                          iconVariant: "chevronRight",
-                          marginLeft: theme.space.xpx,
-                        }}
-                        aria-hidden="true"
-                      />
+                      Confira as principais dúvidas
                     </Text>
                   </Link>
                 </Box>
@@ -328,7 +302,6 @@ export default function HomeScreen() {
                         </Text>
                       </Link>
                     </Button>
-
                   </Box>
                 </Box>
               </Box>
