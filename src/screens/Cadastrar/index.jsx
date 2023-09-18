@@ -64,7 +64,7 @@ export default function Cadastrar() {
         }}
       >
         <Heads>
-          Contato Libra | Cadastro
+          FindBy | Cadastro
         </Heads>
         <Box>
           <Image
@@ -278,7 +278,7 @@ export default function Cadastrar() {
           <Box
             styleSheet={{
               marginTop: "30px",
-              marginLeft: "150px",
+              marginLeft: "250px",
               paddingBottom: "15px",
             }}
           >

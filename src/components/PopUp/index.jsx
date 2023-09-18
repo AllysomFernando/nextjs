@@ -14,7 +14,7 @@ const SuccessPopup = ({ isOpen, onClose }) => {
       <div className="modalContent">
         <h2>Formulário Cadastrado com Sucesso!</h2>
         <Button onClick={onClose} label="Fechar">
-          {" "}
+          {"Fechar"}
         </Button>
       </div>
     </Modal>
