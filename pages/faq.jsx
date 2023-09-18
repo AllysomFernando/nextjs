@@ -1,30 +1,13 @@
-import Heads from "../src/components/Head";
-import Link from "../src/components/Link";
 import Box from "../src/components/Box";
 import Text from "../src/components/Text";
 import { theme } from "../src/components/Theme";
-export async function getStaticProps() {
-  const FAQ_API_URL =
-    "https://gist.githubusercontent.com/omariosouto/0ceab54bdd8182cbd1a4549d32945c1a/raw/578ad1e8e5296fa048e3e7ff6b317f7497b31ad9/alura-cases-faq.json";
-  const faq = await fetch(FAQ_API_URL)
-    .then((respostaDoServidor) => {
-      return respostaDoServidor.json();
-    })
-    .then((res) => {
-      return res;
-    });
-  return {
-    props: {
-      faq,
-    },
-  };
-}
-
+import Heads from "../src/components/Head";
+import Link from "../src/components/Link";
+import FAQItem from "../src/components/FAQItem";
 export default function FAQpage() {
   return (
     <div>
       <Box
-        as="main"
         styleSheet={{
           flex: 1,
           marginLeft: {
@@ -35,6 +18,7 @@ export default function FAQpage() {
         <Heads>FindBy | FAQ</Heads>
 
         <Link href="/">Ir para a página Home</Link>
+
         <Box
           styleSheet={{
             flex: 1,
@@ -45,7 +29,6 @@ export default function FAQpage() {
             styleSheet={{
               textVariant: theme.typography.variants.body4,
               fontWeight: "900",
-
               borderRadius: theme.space.x64,
               color: theme.colors.primary["400"],
               backgroundColor: theme.colors.primary["100"],
@@ -62,38 +45,22 @@ export default function FAQpage() {
             Perguntas Frequentes
           </Text>
         </Box>
-        <Box
-          styleSheet={{
-            flex: 1,
-            marginTop: theme.space.x10,
-            backgroundColor: theme.colors.neutral[100],
-            width: "800px",
-          }}
-        >
-          <Text
-            styleSheet={{
-              paddingLeft: "10px",
-              textVariant: theme.typography.variants.body4,
-              fontWeight: "600",
-              fontSize: "20px",
-            }}
-          >
-            Oque e a contato libras Contato libras?
-          </Text>
-          <br />É uma plataforma para contratação de interpretes em todas as
-          regiões do brasil que permite
-          <br />
-          promover a acessibilidade por meio da oferta de serviços de tradução e
-          <br />
-          interpretação em língua brasileira de sinais. Com a contato libras
-          <br />
-          você pode fazer a contratação de um interprete para reuniões
-          <br />
-          presencialmente ou por vídeo chamada trazendo assim um melhor convívio
-          <br />
-          para a comunidade surda ou ouvinte.
-          <br />
-        </Box>
+        <FAQItem
+          question="Oque e a contato libras Contato libras?"
+          answer="É uma plataforma para contratação de interpretes em todas as regiões do brasil que permite promover a acessibilidade por meio da oferta de serviços de tradução e interpretação em língua brasileira de sinais. Com a contato libras você pode fazer a contratação de um interprete para reuniões presencialmente ou por vídeo chamada trazendo assim um melhor convívio para a comunidade surda ou ouvinte."
+        />
+        <FAQItem
+          question="A quem se destina?"
+          answer="Empresas privadas e públicas, operadoras de concessões, provedores de planos de saúde, instituições bancárias, estabelecimentos comerciais presenciais e virtuais, restaurantes e todas as demais organizações que buscam atender o público surdo em sua própria língua, fortalecem a cidadania, promovem o respeito, incentivam a autonomia e auxiliam na inclusão de milhões de brasileiros."
+        />
+        <FAQItem
+          question="Como funciona?"
+          answer="Contato Libras é uma plataforma onde se pode contratar um intérprete para reuniões, palestras em escolas ou empresas. Oferece agendamento de horário de livre escolha."
+        />
+        <FAQItem
+          question="Como acessar?"
+          answer="O Contato Libras está disponível por QR code ou link e pode ser acessado de celular, tablet ou computador com conexão à internet."
+        />
       </Box>
     </div>
   );
