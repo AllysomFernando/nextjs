@@ -99,7 +99,7 @@ function SideImage() {
 export default function HomeScreen() {
   return (
     <Box>
-      <Heads>FindBy | Início</Heads>
+      <Heads>Contato Libra | Início</Heads>
       <Box
         as="main"
         styleSheet={{

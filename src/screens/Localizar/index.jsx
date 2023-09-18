@@ -20,7 +20,7 @@ export default function Localizar() {
         }}
       >
         <Heads>
-          FindBy | Localizar
+          Contato Libra | Localizar
         </Heads>
         <Image
           styleSheet={{

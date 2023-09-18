@@ -15,9 +15,24 @@ export default function FAQpage() {
           },
         }}
       >
-        <Heads>FindBy | FAQ</Heads>
+        <Heads>Contato Libra | FAQ</Heads>
 
-        <Link href="/">Ir para a página Home</Link>
+        <Link
+          href="/"
+          styleSheet={{
+            color: theme.colors.primary["400"], // Definindo a cor do link
+            textDecoration: "none", // Removendo o sublinhado padrão dos links
+            padding: theme.space.x1, // Pequeno espaçamento ao redor
+            borderRadius: theme.space.x1, // Arredondando um pouco os cantos
+            transition: "color 0.3s ease", // Transição suave para a cor do hover
+            ":hover": {
+              color: theme.colors.primary["600"], // Cor mais escura para o hover
+              textDecoration: "underline", // Sublinhando o link no hover
+            },
+          }}
+        >
+          Voltar
+        </Link>
 
         <Box
           styleSheet={{

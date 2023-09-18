@@ -64,7 +64,7 @@ export default function Cadastrar() {
         }}
       >
         <Heads>
-          FindBy | Cadastro
+          Contato Libra | Cadastro
         </Heads>
         <Box>
           <Image
