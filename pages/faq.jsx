@@ -16,24 +16,52 @@ export default function FAQpage() {
         }}
       >
         <Heads>Contato Libra | FAQ</Heads>
-
-        <Link
-          href="/"
+        <Box
           styleSheet={{
-            color: theme.colors.primary["400"], // Definindo a cor do link
-            textDecoration: "none", // Removendo o sublinhado padrão dos links
-            padding: theme.space.x1, // Pequeno espaçamento ao redor
-            borderRadius: theme.space.x1, // Arredondando um pouco os cantos
-            transition: "color 0.3s ease", // Transição suave para a cor do hover
-            ":hover": {
-              color: theme.colors.primary["600"], // Cor mais escura para o hover
-              textDecoration: "underline", // Sublinhando o link no hover
-            },
+            marginTop: "30px",
           }}
         >
-          Voltar
-        </Link>
+          <Link
+            href="/"
+            styleSheet={{
+              display: "inline-flex",
 
+              alignItems: {
+                xs: "flex-start",
+                sm: "center",
+              },
+              flexDirection: {
+                xs: "column",
+                sm: "row",
+              },
+            }}
+          >
+            <Text
+              styleSheet={{
+                transition: "color 0.3s ease", // Transição suave para a cor do hover
+                hover: {
+                  color: theme.colors.primary["600"], // Cor mais escura para o hover
+                  textDecoration: "underline", // Sublinhando o link no hover
+                },
+                textVariant: theme.typography.variants.body4,
+                fontWeight: "900",
+                borderRadius: theme.space.x64,
+                color: theme.colors.primary["400"],
+                backgroundColor: theme.colors.primary["100"],
+                paddingLeft: theme.space["x3"],
+                paddingRight: theme.space["x3"],
+                paddingVertical: theme.space["x3"],
+                marginRight: theme.space.x3,
+                marginBottom: {
+                  xs: theme.space.x2,
+                  sm: theme.space.x0,
+                },
+              }}
+            >
+              Voltar
+            </Text>
+          </Link>
+        </Box>
         <Box
           styleSheet={{
             flex: 1,
@@ -42,11 +70,10 @@ export default function FAQpage() {
         >
           <Text
             styleSheet={{
-              textVariant: theme.typography.variants.body4,
+              textVariant: theme.typography.variants.heading1,
               fontWeight: "900",
               borderRadius: theme.space.x64,
               color: theme.colors.primary["400"],
-              backgroundColor: theme.colors.primary["100"],
               paddingLeft: theme.space["x3"],
               paddingRight: theme.space["x3"],
               paddingVertical: theme.space["x3"],

@@ -186,6 +186,10 @@ export default function HomeScreen() {
                       styleSheet={{
                         textVariant: theme.typography.variants.body4,
                         fontWeight: "900",
+                        hover: {
+                          color: theme.colors.primary["600"], // Cor mais escura para o hover
+                          textDecoration: "underline", // Sublinhando o link no hover
+                        },
                         borderRadius: theme.space.x64,
                         color: theme.colors.primary["400"],
                         backgroundColor: theme.colors.primary["100"],
