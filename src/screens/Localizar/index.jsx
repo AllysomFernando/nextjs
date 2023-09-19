@@ -1,13 +1,11 @@
 import Box from "../../components/Box";
-import Input from "../../components/Input";
-import SelectTipo from "../../components/Select";
 import Text from "../../components/Text";
 import Image from "../../components/Image";
 import Button from "../../components/Button";
 import { theme } from "../../components/Theme";
 import Heads from "../../components/Head";
 import React, { useState } from "react";
-
+import Link from "../../components/Link";
 export default function Localizar() {
   const [showTable, setShowTable] = useState(false);
   const [showMessageField, setShowMessageField] = useState(false);
@@ -41,6 +39,54 @@ export default function Localizar() {
 
   return (
     <div>
+      <Box>
+        <Box
+          styleSheet={{
+            marginTop: "20px",
+          }}
+        >
+          <Link
+            href="/"
+            styleSheet={{
+              display: "inline-flex",
+
+              alignItems: {
+                xs: "flex-start",
+                sm: "center",
+              },
+              flexDirection: {
+                xs: "column",
+                sm: "row",
+              },
+            }}
+          >
+            <Text
+              styleSheet={{
+                transition: "color 0.3s ease", // Transição suave para a cor do hover
+                hover: {
+                  color: theme.colors.primary["600"], // Cor mais escura para o hover
+                  textDecoration: "underline", // Sublinhando o link no hover
+                },
+                textVariant: theme.typography.variants.body4,
+                fontWeight: "900",
+                borderRadius: theme.space.x64,
+                color: theme.colors.primary["400"],
+                backgroundColor: theme.colors.primary["100"],
+                paddingLeft: theme.space["x3"],
+                paddingRight: theme.space["x3"],
+                paddingVertical: theme.space["x3"],
+                marginRight: theme.space.x3,
+                marginBottom: {
+                  xs: theme.space.x2,
+                  sm: theme.space.x0,
+                },
+              }}
+            >
+              Voltar
+            </Text>
+          </Link>
+        </Box>
+      </Box>
       <Box
         as="main"
         styleSheet={{
@@ -52,6 +98,7 @@ export default function Localizar() {
         }}
       >
         <Heads>Contato Libra | Localizar</Heads>
+
         <Image
           styleSheet={{
             width: "800px",
@@ -61,6 +108,7 @@ export default function Localizar() {
           src="/assets/images/lista.png"
           alt="Logo Find By"
         />
+
         <Box
           styleSheet={{
             paddingLeft: "410px",

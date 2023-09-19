@@ -1,7 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
 import Button from "../Button";
-import Link from "../Link";
+import Link from "next/link"; // Importando o Link do Next.js
 
 const SuccessPopup = ({ isOpen, onClose }) => {
   return (
@@ -13,9 +13,13 @@ const SuccessPopup = ({ isOpen, onClose }) => {
     >
       <div className="modalContent">
         <h2>Formulário Cadastrado com Sucesso!</h2>
-        <Button onClick={onClose} label="Fechar">
-          
-        </Button>
+        <Link href="/login"> {/* Usando o Link para redirecionar */}
+          <a> {/* O componente `Link` requer uma âncora (`<a>`) como filho */}
+            <Button onClick={onClose} label="Fechar">
+              Continuar
+            </Button>
+          </a>
+        </Link>
       </div>
     </Modal>
   );
