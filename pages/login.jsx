@@ -4,7 +4,7 @@ import Input from "../src/components/Input";
 import Button from "../src/components/Button";
 import Text from "../src/components/Text";
 import { theme } from "../src/components/Theme";
-import { useRouter } from 'next/router';  
+import { useRouter } from "next/router";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");
@@ -17,8 +17,7 @@ const LoginPage = () => {
     // como uma chamada de API ou verificar se os detalhes estão corretos.
     console.log("Username:", username);
     console.log("Password:", password);
-    router.push('/localizar');
-
+    router.push("/localizar");
   };
 
   return (

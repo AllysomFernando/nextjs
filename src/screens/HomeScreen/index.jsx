@@ -9,7 +9,7 @@ import Icon from "../../components/Icon";
 import Button from "../../components/Button";
 import Heads from "../../components/Head";
 
-const LOGO_ALURA_URL = "/assets/images/logo.svg";
+const LOGO_ALURA_URL = "/assets/images/logo.png";
 const SIDE_IMAGE_URL =
   "https://img.freepik.com/vetores-gratis/maos-de-cura-energetica-com-fogos-de-artificio-abstratos_23-2148662444.jpg?w=1380&t=st=1692970317~exp=1692970917~hmac=35b35a186a25fbe82fcd7bd7801e45f9f9bf811a6271321c98ed4fc86af71bb3";
 
@@ -26,6 +26,7 @@ function SideImage() {
         maxWidth: {
           sm: theme.space.xcontainer_md,
         },
+        top: 0,
       }}
     >
       <Box
@@ -150,8 +151,16 @@ export default function HomeScreen() {
               <Box>
                 <Image
                   styleSheet={{
-                    width: "300px",
+                    boxShadow: `0 5px 16px 0px ${theme.colors.neutral[999]}73`,
+                    borderRadius: {
+                      md: theme.space.x4,
+                    },
+                    maxWidth: {
+                      lg: "none",
+                    },
+                    width: "500px",
                     height: "300px",
+                    marginLeft: "150px",
                   }}
                   src={LOGO_ALURA_URL}
                   alt="Logo Find By"
@@ -216,11 +225,44 @@ export default function HomeScreen() {
                   <Text
                     as="h1"
                     styleSheet={{
-                      textVariant: theme.typography.variants.heading1,
+                      textVariant: theme.typography.variants.heading2,
                       color: theme.colors.neutral["900"],
                     }}
                   >
-                    Contratar um Interprete
+                    O que é o Contato Libra?
+                  </Text>
+                  <Text
+                    as="p"
+                    styleSheet={{
+                      textVariant: theme.typography.variants.body1,
+                      color: theme.colors.neutral["500"],
+                      marginTop: theme.space.x2,
+                    }}
+                  >
+                    Contato libras e uma plataforma para contratação de
+                    interpretes em todas as regiões do brasil que permite
+                    promover a acessibilidade por meio da oferta de serviços de
+                    tradução e interpretação em língua brasileira de sinais. Com
+                    a contato libras você pode fazer a contratação de um
+                    interprete para reuniões presencialmente ou por vídeo
+                    chamada trazendo assim um melhor convívio para a comunidade
+                    surda ou ouvinte.
+                  </Text>
+                </Box>
+                <Box
+                  styleSheet={{
+                    marginTop: theme.space.x6,
+                    maxWidth: theme.space.xcontainer_sm,
+                  }}
+                >
+                  <Text
+                    as="h1"
+                    styleSheet={{
+                      textVariant: theme.typography.variants.heading2,
+                      color: theme.colors.neutral["900"],
+                    }}
+                  >
+                    A quem se destina?
                   </Text>
                   <Text
                     as="p"
@@ -230,17 +272,12 @@ export default function HomeScreen() {
                       marginTop: theme.space.x6,
                     }}
                   >
-                    Aqui você pode contratar um interprete perto de você!
-                  </Text>
-                  <Text
-                    as="p"
-                    styleSheet={{
-                      textVariant: theme.typography.variants.body1,
-                      color: theme.colors.neutral["500"],
-                      marginTop: theme.space.x6,
-                    }}
-                  >
-                    Clique aqui para ver os interpretes perto de você.
+                    A empresas privadas e públicas, concessionárias, planos de
+                    saúde, bancos, comércio físico e on-line, restaurantes,
+                    enfim, todas as organizações que desejam atender a pessoa
+                    surda no seu próprio idioma, contribuindo para a construção
+                    da cidadania, do respeito, da autonomia e da inclusão de
+                    milhões de brasileiros.
                   </Text>
                 </Box>
                 <Box
@@ -302,13 +339,91 @@ export default function HomeScreen() {
                             color: theme.colors.neutral["000"],
                           }}
                         >
-                          Cadastrar
+                          Cadastrar como um interprete
+                        </Text>
+                      </Link>
+                    </Button>
+                  </Box>
+                  <Box
+                    styleSheet={{
+                      marginTop: {
+                        xs: theme.space.x4,
+                        sm: theme.space.x0,
+                      },
+                      marginLeft: {
+                        sm: theme.space.x3,
+                      },
+                    }}
+                  >
+                    <Button
+                      type="submit"
+                      styleSheet={{
+                        backgroundColor: theme.colors.primary["800"],
+                        paddingLeft: theme.space.x2,
+                        paddingRight: theme.space.x2,
+                        fontWeight: 300,
+                        textVariant: theme.typography.variants.body1,
+                      }}
+                    >
+                      <Link
+                        href="/cadastrar"
+                        styleSheet={{
+                          display: "inline-flex",
+                          alignItems: {
+                            xs: "flex-start",
+                            sm: "center",
+                          },
+                          flexDirection: {
+                            xs: "column",
+                            sm: "row",
+                          },
+                        }}
+                      >
+                        <Text
+                          styleSheet={{
+                            textVariant: theme.typography.variants.body1,
+                            fontWeight: "900",
+                            borderRadius: theme.space.x64,
+                            color: theme.colors.neutral["000"],
+                          }}
+                        >
+                          Contratrar um interprete
                         </Text>
                       </Link>
                     </Button>
                   </Box>
                 </Box>
               </Box>
+            </Box>
+            <Box
+              styleSheet={{
+                marginTop: "650px",
+                maxWidth: theme.space.xcontainer_sm,
+                marginLeft: "150px",
+              }}
+            >
+              <Text
+                as="h1"
+                styleSheet={{
+                  textVariant: theme.typography.variants.heading2,
+                  color: theme.colors.neutral["900"],
+                }}
+              >
+                Como funciona?
+              </Text>
+              <Text
+                as="p"
+                styleSheet={{
+                  textVariant: theme.typography.variants.body1,
+                  color: theme.colors.neutral["500"],
+                  marginTop: theme.space.x6,
+                  display: "inline-flex",
+                }}
+              >
+                Contato libras e uma plataforma onde pode ser contratado o
+                interprete para reuniões, palestra em escolas ou empresas.
+                Agendamento de horário livre escolha.
+              </Text>
             </Box>
           </Box>
 
